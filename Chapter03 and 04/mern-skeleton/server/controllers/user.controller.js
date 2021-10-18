@@ -43,6 +43,7 @@ const read = (req, res) => {
 
 const list = async (req, res) => {
   try {
+    console.log("list users")
     let users = await User.find().select('name email updated created')
     res.json(users)
   } catch (err) {
